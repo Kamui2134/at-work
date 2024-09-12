@@ -115,12 +115,12 @@ body {
 .container {
   width: 1160px;
 }
-.h1 {
+.title {
   font-size: var(--fontSize-24);
   font-family: var(--fontFamily-Manrope);
 }
 
-.h2 {
+.headline {
   font-size: var(--fontSize-20);
   font-family: var(--fontFamily-Manrope);
 }

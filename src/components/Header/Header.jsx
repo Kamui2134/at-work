@@ -11,7 +11,7 @@ export default function Header() {
 			<div className='container'>
 				<div className='logo-container'>
 					<img src={logo} />
-					<h1 className='h1 logo'>
+					<h1 className='title logo'>
 						at-<b>work</b>
 					</h1>
 				</div>
@@ -26,7 +26,7 @@ export default function Header() {
 					</div>
 					<div className='avatar-container'>
 						<img className='avatar' src={temporary} alt='avatar' />
-						<p className='text-2 semibold'>Ivan1234</p>
+						<p className='text-2 medium'>Ivan1234</p>
 					</div>
 				</div>
 			</div>

@@ -19,7 +19,7 @@
     flex-direction: row;
     align-items: center;
 }
-.h1.logo {
+.title.logo {
     margin-inline-start: 8px;
     font-weight: var(--weight-regular);
 }
