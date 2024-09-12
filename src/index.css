@@ -21,6 +21,10 @@
   --fontSize-18: 18px;
   --fontSize-20: 20px;
   --fontSize-24: 24px;
+
+  --fontFamily-Manrope: "Manrope", sans-serif;
+
+  --clipPath-circle: circle(50%);
 }
 
 /*-----------------------------------*\
@@ -103,6 +107,40 @@ body {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+.container {
+  width: 1160px;
+}
+.h1 {
+  font-size: var(--fontSize-24);
+  font-family: var(--fontFamily-Manrope);
+}
+
+.h2 {
+  font-size: var(--fontSize-20);
+  font-family: var(--fontFamily-Manrope);
+}
+
+.text-1 {
+  font-size: var(--fontSize-18);
+  font-family: var(--fontFamily-Manrope);
+}
+
+.text-2 {
+  font-size: var(--fontSize-16);
+  font-family: var(--fontFamily-Manrope);
+}
+
+.medium {
+  font-weight: var(--weight-medium);
+}
+.semibold {
+  font-weight: var(--weight-semiBold);
+}
 
 /*-----------------------------------*\
   #HEADER
