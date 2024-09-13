@@ -1,5 +1,7 @@
 import {createBrowserRouter} from 'react-router-dom'
 import App from '../App'
+import EditPage from 'pages/EditPage/EditPage'
+import MainPage from 'pages/MainPage/MainPage'
 
 const router = createBrowserRouter([
     {
@@ -7,8 +9,12 @@ const router = createBrowserRouter([
         element: <App/>,
         children: [
             {
+                path: '/',
+                element: <MainPage/>
+            },
+            {
                 path: '/edit',
-                element: <div>editing!!!</div>
+                element: <EditPage/>
             }
         ]
     }
