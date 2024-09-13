@@ -16,7 +16,7 @@ export default function MainPage() {
 			newArchive = users.filter(user => {
 				return user.id === currentDropMenu
 			})
-			return [...prevArchive,...newArchive]
+			return [...prevArchive, ...newArchive]
 		})
 		setUsers(prevUsers => {
 			let newUsers = []
@@ -114,11 +114,13 @@ export default function MainPage() {
 												>
 													Архивировать
 												</button>
-												<button className='text-2 medium' onClick={hideUser}>Скрыть</button>
+												<button className='text-2 medium' onClick={hideUser}>
+													Скрыть
+												</button>
 											</div>
 										</div>
 									</div>
-									<p className='text-2 medium ' style={{ lineHeight: '22px' }}>
+									<p className='text-2 medium '>
 										{user.company.name}
 									</p>
 								</div>
@@ -135,11 +137,11 @@ export default function MainPage() {
 				<ul className='cards-container'>
 					{archive.map(user => (
 						<li className='card' key={user.id}>
-							<img className='card-img' src={temporary} alt='user-img' />
+							<img className='card-img archive' src={temporary} alt='user-img' />
 							<div className='card-info'>
 								<div className='card-head'>
 									<div className='headline-container'>
-										<h2 className='headline accent'>{user.username}</h2>
+										<h2 className='headline'>{user.username}</h2>
 										<div
 											className={
 												currentDropMenu === user.id
@@ -168,11 +170,16 @@ export default function MainPage() {
 											</div>
 										</div>
 									</div>
-									<p className='text-2 medium ' style={{ lineHeight: '22px' }}>
+									<p
+										className='text-2 medium archive'
+									>
 										{user.company.name}
 									</p>
 								</div>
-								<small className='caption' style={{ lineHeight: '19px' }}>
+								<small
+									className='caption archive'
+									style={{ lineHeight: '19px' }}
+								>
 									{user.address.city}
 								</small>
 							</div>

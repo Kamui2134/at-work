@@ -122,12 +122,15 @@ body {
 	font-size: var(--fontSize-24);
 	font-family: var(--fontFamily-Manrope);
 	font-weight: var(--weight-semiBold);
+	color: var(--color-1);
 }
 
 .headline {
 	font-size: var(--fontSize-20);
 	font-family: var(--fontFamily-Manrope);
 	font-weight: var(--weight-semiBold);
+	color: var(--color-2);
+	line-height: 27px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -141,6 +144,7 @@ body {
 .text-2 {
 	font-size: var(--fontSize-16);
 	font-family: var(--fontFamily-Manrope);
+	line-height: 22px;
 }
 
 .caption {

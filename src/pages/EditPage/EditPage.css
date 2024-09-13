@@ -1,0 +1,49 @@
+.editPage .container {
+	margin-inline: auto;
+}
+.back-link-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 68px;
+	gap: 11px;
+}
+.main-content {
+	width: 100%;
+	display: flex;
+	justify-content: stretch;
+	margin-top: 24px;
+	gap: 20px;
+}
+.editPage .avatar-container {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	background-color: var(--color-6);
+	padding: 40px;
+	border-radius: 16px;
+}
+.editPage .avatar {
+	height: 485px;
+	width: 280px;
+	object-fit: cover;
+	border: 8px;
+}
+.profile-data {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.profile-data * {
+    text-align: left;
+    height: 34px;
+    border-bottom: 1px solid var(--color-4);
+}
+.editPage .text-2.medium.description {
+	color: var(--color-3);
+}
+.edit-container {
+    padding: 40px;
+    border-radius: 16px;
+	background-color: var(--color-6);
+}

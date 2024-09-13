@@ -48,7 +48,6 @@
 .card-head {
 }
 .headline-container {
-	height: 27px;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -100,4 +99,15 @@
 .drop-content button:hover,
 .drop-content a:hover {
 	color: var(--color-accent);
+}
+
+/* Архивные версии стилей */
+.card-img.archive {
+    filter: grayscale(1);
+}
+.text-2.medium.archive {
+    color: var(--color-3)
+}
+.caption.archive {
+    color: var(--color-4)
 }

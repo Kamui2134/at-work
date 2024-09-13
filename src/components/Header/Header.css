@@ -33,14 +33,14 @@
     gap: 4px;
 }
 
-.avatar-container {
+.header .avatar-container {
     display: flex;
     align-items: center;
     margin-inline: 20px 4px;
     gap: 8px;
 }
 
-.avatar {
+.header .avatar {
     width: 20px;
     height: 20px;
     object-fit: cover;
