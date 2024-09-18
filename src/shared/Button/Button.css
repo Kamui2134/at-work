@@ -1,0 +1,11 @@
+.button {
+    background-color: var(--color-1);
+    border-radius: 50px;
+    padding: 12px 42px;
+    width: 170px;
+    color: var(--color-6);
+}
+.button:hover {
+    color: var(--color-2);
+    background-color: var(--color-5);
+}

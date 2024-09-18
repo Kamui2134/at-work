@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react'
 import './MainPage.css'
 import temporary from 'assets/images/temporary.jpg'
 import dotsMenu from 'assets/icons/dots-menu.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch} from 'react-redux'
+import { addUser } from 'stores/User/editUser.js'
+import Loader from 'shared/Loader/Loader'
 
 export default function MainPage() {
+	const dispatch = useDispatch()
 	const [users, setUsers] = useState([])
 	const [archive, setArchive] = useState([])
 	// активное drop-menu
 	const [currentDropMenu, setCurrentDropMenu] = useState(null)
+	const navigate = useNavigate()
+	const [isLoading, setIsLoading] = useState(true)
 
 	const transferToArchive = () => {
 		setArchive(prevArchive => {
@@ -23,7 +29,6 @@ export default function MainPage() {
 			newUsers = prevUsers.filter(user => {
 				return user.id !== currentDropMenu
 			})
-			console.log(newUsers)
 			return newUsers
 		})
 		setCurrentDropMenu(null)
@@ -41,7 +46,6 @@ export default function MainPage() {
 			newUsers = archive.filter(user => {
 				return user.id === currentDropMenu
 			})
-			console.log(newUsers)
 			return [...prevUsers, ...newUsers]
 		})
 		setCurrentDropMenu(null)
@@ -53,7 +57,6 @@ export default function MainPage() {
 			newUsers = prevUsers.filter(user => {
 				return user.id !== currentDropMenu
 			})
-			console.log(newUsers)
 			return newUsers
 		})
 		setCurrentDropMenu(null)
@@ -66,11 +69,21 @@ export default function MainPage() {
 			.then(response => response.json())
 			.then(data => {
 				setUsers(data.slice(0, 6))
+				setIsLoading(false)
 			})
 			.catch(error => {
 				console.error('Ошибка при загрузке данных:', error)
 			})
 	}, [])
+
+	const goToEditPage = () => {
+		const editUser = users.filter((user) => {
+			return user.id === currentDropMenu
+		})
+		dispatch(addUser(editUser[0]))
+		console.log(editUser)
+		navigate('/edit')
+	}
 
 	return (
 		<main className='mainPage' onClick={e => setCurrentDropMenu(null)}>
@@ -105,9 +118,9 @@ export default function MainPage() {
 												<img src={dotsMenu} className='icon' alt='dots-menu' />
 											</button>
 											<div className='drop-content'>
-												<Link className='text-2 medium' to='/edit'>
+												<button onClick={goToEditPage} className='text-2 medium' to='/edit'>
 													Редактировать
-												</Link>
+												</button>
 												<button
 													className='text-2 medium'
 													onClick={transferToArchive}
@@ -187,6 +200,7 @@ export default function MainPage() {
 					))}
 				</ul>
 			</div>
+			<Loader isLoading={isLoading}/>
 		</main>
 	)
 }

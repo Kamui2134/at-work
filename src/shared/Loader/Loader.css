@@ -1,0 +1,27 @@
+.loader-container {
+	display: none;
+	position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #1616163f;
+}
+.loader-container.active {
+	display: flex;
+}
+.loader {
+	height: 120px;
+	width: 120px;
+	border: 6px solid white;
+	border-color: white transparent white transparent;
+	border-radius: 50%;
+	animation: spin 1.3s ease infinite;
+}
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
